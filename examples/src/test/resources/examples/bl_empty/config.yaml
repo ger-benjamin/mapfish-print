@@ -1,0 +1,9 @@
+throwErrorOnExtraParameters: true
+
+templates:
+    report: !template
+        reportTemplate: bl_empty.jrxml
+
+        processors: &processors
+        - !reportBuilder # compile all reports in current directory
+            directory: '.'

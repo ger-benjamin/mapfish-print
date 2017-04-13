@@ -1,0 +1,26 @@
+throwErrorOnExtraParameters: true
+
+templates:
+    report: !template
+        reportTemplate: bl_full.jrxml
+        tableData: jrDataSource
+        attributes:
+            gemeinde: !string {}
+            parzelle: !integer {}
+            pointX: !integer {}
+            pointY: !integer {}
+            datasource: !datasource
+                attributes:
+                    title: !string {}
+                    info: !string {}
+                    map: !map
+                        maxDpi: 254
+                        height: 350
+                        width: 300
+
+        processors: &processors
+        - !reportBuilder # compile all reports in current directory
+            directory: '.'
+        - !createDataSource
+            processors:
+            - !createMap {}

@@ -1,0 +1,135 @@
+{
+  "layout": "report",
+  "outputFormat": "pdf",
+  "attributes": {
+    "gemeinde": "Therwill",
+    "parzelle": "650",
+    "pointY": "2608975",
+    "pointX": "1261395",
+    "datasource": [{
+      "title": "Potential Photovoltaik",
+      "info": "Bildausschnitt des Layers Photvoltaik Dach- Teilflächen",
+      "map": {
+        "projection": "EPSG:900913",
+        "dpi": 72,
+        "center": [-8233518, 4980320],
+        "scale": 25000,
+        "layers": [{
+          "type": "geojson",
+          "style": {
+            "*": {
+              "symbolizers": [{
+                "fillColor": "orange",
+                "strokeColor": "black",
+                "strokeOpacity": 1,
+                "strokeWidth": 2,
+                "pointRadius": 6,
+                "type": "point"
+              }, {
+                "fillOpacity": 0,
+                "strokeColor": "orange",
+                "strokeOpacity": 1,
+                "strokeWidth": 2,
+                "type": "polygon"
+              }]
+            },
+            "version": "2"
+          },
+          "geoJson": {
+            "type": "FeatureCollection",
+            "features": [{
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-8233518, 4980320]
+                },
+                "properties": {
+                    "type": "click"
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [[[-8233718, 4980520], [-8233118, 4980620], [-8233018, 4980420], [-8233618, 4980220], [-8233718, 4980520]]]
+                },
+                "properties": {
+                    "type": "parcel"
+                }
+            }]
+          }
+        }, {
+          "baseURL": "http://localhost:8080/gs-web-app/wms",
+          "opacity": 1,
+          "type": "WMS",
+          "layers": ["tiger-ny"],
+          "imageFormat": "image/png",
+          "customParams": {
+            "TRANSPARENT": "true"
+          }
+        }]
+      }
+    }, {
+      "title": "Potential Solarthermie",
+      "info": "Bildausschnitt des Layers Thermische Solaranlagen Dach- Teilflächen",
+      "map": {
+        "projection": "EPSG:900913",
+        "dpi": 72,
+        "center": [-8233518, 4980320],
+        "scale": 25000,
+        "layers": [{
+          "type": "geojson",
+          "style": {
+            "*": {
+              "symbolizers": [{
+                "fillColor": "orange",
+                "strokeColor": "black",
+                "strokeOpacity": 1,
+                "strokeWidth": 2,
+                "pointRadius": 6,
+                "type": "point"
+              }, {
+                "fillOpacity": 0,
+                "strokeColor": "orange",
+                "strokeOpacity": 1,
+                "strokeWidth": 2,
+                "type": "polygon"
+              }]
+            },
+            "version": "2"
+          },
+          "geoJson": {
+            "type": "FeatureCollection",
+            "features": [{
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [-8233518, 4980320]
+                },
+                "properties": {
+                    "type": "click"
+                }
+            }, {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [[[-8233718, 4980520], [-8233118, 4980620], [-8233018, 4980420], [-8233618, 4980220], [-8233718, 4980520]]]
+                },
+                "properties": {
+                    "type": "parcel"
+                }
+            }]
+          }
+        }, {
+          "baseURL": "http://localhost:8080/gs-web-app/wms",
+          "opacity": 1,
+          "type": "WMS",
+          "layers": ["tiger-ny"],
+          "imageFormat": "image/png",
+          "customParams": {
+            "TRANSPARENT": "true"
+          }
+        }]
+      }
+    }]
+  }
+}

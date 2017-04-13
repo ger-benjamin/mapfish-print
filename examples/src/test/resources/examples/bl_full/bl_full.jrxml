@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2017-04-13T10:22:46 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="template_solarkataster_empty" pageWidth="595" pageHeight="842" columnWidth="483" leftMargin="56" rightMargin="56" topMargin="56" bottomMargin="56" uuid="c5fa9855-0ffa-4a69-b380-b80a5a794370">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="gemeinde" class="java.lang.String"/>
+	<parameter name="parzelle" class="java.lang.Integer"/>
+	<parameter name="pointX" class="java.lang.Integer"/>
+	<parameter name="pointY" class="java.lang.Integer"/>
+	<field name="title" class="java.lang.String"/>
+	<field name="info" class="java.lang.String"/>
+	<field name="mapSubReport" class="java.lang.String"/>
+	<title>
+		<band height="700" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="170" height="71" uuid="be52fb03-daa3-423a-a1a7-8aa78043e5dc"/>
+				<text><![CDATA[Bau- und Umweltschutzdirektion
+Rheinstrasse 29, 4410 Liestal
+Telefon: +41 (0)61 552 55 05
+Fax: +41 (0)61 552 69 84]]></text>
+			</staticText>
+			<image>
+				<reportElement x="310" y="0" width="175" height="110" uuid="8d538e12-1e5b-4a31-9a15-d26185beee95"/>
+				<imageExpression><![CDATA["logo.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="0" y="210" width="300" height="20" uuid="2d83c872-1a46-4e58-982f-a98353211b9b"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Auskunft zum Solarpotential]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="-1" y="239" width="450" height="20" uuid="21d39b10-6023-4eeb-be45-97ab983945ee"/>
+				<textFieldExpression><![CDATA["automatischer Bericht erstellt für (" + $P{pointY} + " " + $P{pointX} + "):"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="269" width="260" height="60" uuid="36565d1e-9a59-4a2c-9b55-323069d0ad9f"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+					<paragraph lineSpacing="Double"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Gemeinde: " + $P{gemeinde} + "\nParzelle: " + $P{parzelle}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="630" width="484" height="20" uuid="e0341997-97fd-46d0-a7ca-ae70682e7437">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Allgemeiner Hinweis:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="650" width="484" height="50" uuid="23c0b049-779a-4b11-8034-9c4930476e4d">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Justified"/>
+				<text><![CDATA[Die ausgewiesenen Potenziale beruhen auf Modellrechnungen und stellen keine exakten Messwerte dar. Sie ermöglichen lediglich eine grobe Abschätzung zur Eignung einer Dachfläche für eine solare Nutzung. Für die Planung und Realisierung einer Anlage sollte in jedem Fall eine Fachperson beigezogen werden.]]></text>
+			</staticText>
+			<break>
+				<reportElement x="0" y="699" width="96" height="1" uuid="1de1d42a-c38c-4483-9b5c-856461763546">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+			</break>
+		</band>
+	</title>
+	<detail>
+		<band height="699" splitType="Stretch">
+			<textField>
+				<reportElement x="101" y="10" width="299" height="23" uuid="b00afc01-efec-4c59-98a7-7416c100f0b3"/>
+				<textElement>
+					<font size="16" isBold="true" isItalic="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{title}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement mode="Transparent" x="100" y="40" width="300" height="350" backcolor="#FFFFFF" uuid="c889b337-f931-43d3-b6b5-07e9adb33106">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<subreportExpression><![CDATA[$F{mapSubReport}]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="96" y="390" width="300" height="20" uuid="c53ce7bb-2c35-4f08-ae84-577e87d8a47f"/>
+				<textFieldExpression><![CDATA[$F{info}]]></textFieldExpression>
+			</textField>
+			<break>
+				<reportElement x="0" y="698" width="99" height="1" uuid="c3f9d2c6-c834-4134-8390-b0f1f6179bf7"/>
+			</break>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="29" splitType="Stretch">
+			<line>
+				<reportElement x="-1" y="0" width="484" height="1" uuid="a37eda82-6b58-4d09-8a6e-a43407754896">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="4" width="100" height="20" uuid="c6bd76a7-016f-4ae5-81ca-1860b3e29d42">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd.MM.yyyy HH:mm">
+				<reportElement x="363" y="4" width="120" height="20" uuid="41731f03-88e7-4f16-8cef-526b6502e5bf">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="700">
+			<staticText>
+				<reportElement x="-1" y="15" width="485" height="25" uuid="05f8e958-b6c4-4945-9fe4-bddb127c9f7c"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Baubewilligungs- und Meldepflicht bei Solaranlagen]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="9" y="45" width="474" height="109" uuid="6d67fff9-dfb5-48f0-84c4-0eb5cbb97f26"/>
+				<textElement markup="html"/>
+				<textFieldExpression><![CDATA["<span style='text-decoration: underline'>Meldepflicht Solaranlagen</span><br /><span>Im Kanton Basel-Landschaft sind für Solaranlagen innerhalb der Bauzonen und in der Landwirtschaftszone in der Regel keine Baubewilligungen nötig. Die Anlagen sind jedoch mit einem Meldeformular 30 Tage vor Baubeginn dem Bauinspektorat zu melden. Wer beim Baselbieter Energiepaket ein Fördergesuch für eine thermische Solaranlage erfasst, erhält beim Ausdruck des Fördergesuchs automatisch auch ein Meldeformular für das Bauinspektorat. Für Photovoltaikanlagen muss ein Meldeformular eingereicht werden.</span><br /><span style='font-weight:bold'>Meldeformular für Solaranlage: <a style='color:blue' href='www.bauinspektorat.bl.ch'>www.bauinspektorat.bl.ch</a></span>"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="9" y="175" width="340" height="15" uuid="1c62faa7-824b-4ae6-88dd-c33d15e5bf81"/>
+				<textElement>
+					<font isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Meldepflicht Solaranlagen]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="190" width="473" height="70" uuid="51e65819-c5b3-47ab-b9a2-900de6a53351"/>
+				<textElement>
+					<font isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Im Kanton Basel-Landschaft sind für Solaranlagen innerhalb der Bauzonen und in der Landwirtschaftszone in der Regel keine Baubewilligungen nötig. Die Anlagen sind jedoch mit einem Meldeformular 30 Tage vor Baubeginn dem Bauinspektorat zu melden. Wer beim Baselbieter Energiepaket ein Fördergesuch für eine thermische Solaranlage erfasst, erhält beim Ausdruck des Fördergesuchs automatisch auch ein Meldeformular für das Bauinspektorat. Für Photovoltaikanlagen muss ein Meldeformular eingereicht werden.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="260" width="180" height="15" uuid="4df953b6-41bb-4f7c-bcc6-cd0821c13661"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Meldeformular für Solaranlage:]]></text>
+			</staticText>
+			<textField hyperlinkType="Reference">
+				<reportElement x="190" y="260" width="172" height="15" forecolor="#0000FF" uuid="225eba9c-b7c4-4981-9baf-4aa488285a98"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["www.bauinspektorat.bl.ch"]]></textFieldExpression>
+				<hyperlinkReferenceExpression><![CDATA["www.bauinspektorat.bl.ch"]]></hyperlinkReferenceExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
